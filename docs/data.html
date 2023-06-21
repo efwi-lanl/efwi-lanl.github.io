@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Chengyuan Deng">
+
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <title>Elastic FWI | A collection of benchmark datasets for Seismic FWI with Machine Learning</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span style="font-family: 'Ma Shan Zheng', cursive;">\(\mathbb{E}^{FWI}\)</span> 
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                <li ><a href="../index.html">Home</a></li>
+                <li ><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Datasets <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#vel">\(\mathbb{E}^{Vel}\) Family</a></li>
+                      <li class="divider"></li>  
+                      <li><a href="#fault">\(\mathbb{E}^{Fault}\) Family</a></li>
+                    </ul>
+                </li>           
+                <li ><a href="benchmark.html">Benchmarks</a></li>           
+                <li ><a  target="_blank" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                	Resources <span class="caret"></span></a>
+                	<ul class="dropdown-menu">
+                		<li><a target="_blank" href="https://github.com/lanl/OpenFWI">Github</a></li>
+                		<li><a target="_blank" href="https://drive.google.com/drive/folders/1IzRHldsiiHIqTT9CwTXHBtONuIJiNbyJ?usp=sharing">Pretrained Models</a></li>
+                		<li><a href="tutorial/">Tutorial</a></li>
+                		<li><a href="docs/pub.html">Papers</a></li>
+                		<li><a href="docs/team.html">Team</a></li>
+                	</ul>
+                <li ><a href="update.html">Updates</a></li>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="page-content">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          	<div id="markdown-content-container">	
+            <h2>\(\mathbb{E}^{FWI}\) Datasets</h2>
+            <hr />
+
+            <h5 id="vel">- Vel Family</h5>
+				<table style="width:100%">
+				  <thead>
+				    <tr>
+				      <th style="text-align: center">Name</th>
+				      <th style="text-align: center">Size</th>
+				      <th style="text-align: center">#Training</th>
+				      <th style="text-align: center">#Validation</th>
+				      <th style="text-align: center">Input shape</th>
+				      <th style="text-align: center">Output shape</th>
+				      <th>Note</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td style="text-align: center"> <a target="_blank" href="https://drive.google.com/drive/folders/18gYoLzsuXxsLo_sbK7laV0KGYtfSewIy?usp=sharing">\(\mathbb{E}^{FVA}\)</a></td>
+				      <td style="text-align: center"> 123GB</td>
+				      <td style="text-align: center">24K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Simple situation with flat layers</td>
+				    </tr>
+				    <tr>
+				      <td style="text-align: center"> <a target="_blank" href="https://drive.google.com/drive/folders/1fE7yxlvFjnvI_rmQBTcI0-RbNPLPGoDI?usp=sharing">\(\mathbb{E}^{FVB}\)</a></td>
+				      <td style="text-align: center"> 123GB</td>
+				      <td style="text-align: center">24K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Difficult version of \(\mathbb{E}^{FVA}\)</td>
+				    </tr>
+
+				  </tbody>
+				  <tbody>
+				    <tr>
+				      <td style="text-align: center"> <a target="_blank" href="https://drive.google.com/drive/folders/1ce3d88vyRa1XB6jTdyL_RTV0A_X5GS1b?usp=sharing">\(\mathbb{E}^{CVA}\)</a></td>
+				      <td style="text-align: center"> 123GB</td>
+				      <td style="text-align: center">24K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Simple situation with curved layers</td>
+				    </tr>
+				    <tr>
+				      <td style="text-align: center"><a target="_blank" href="https://drive.google.com/drive/folders/1neb0SU478bpxQOF6S5paVYnHoEI6e3P5?usp=sharing">\(\mathbb{E}^{CVB}\)</a></td>
+				      <td style="text-align: center"> 123GB</td>
+				      <td style="text-align: center">24K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Difficult version of \(\mathbb{E}^{CVA}\)</td>
+				    </tr>
+
+				  </tbody>
+				</table>
+
+			<hr />
+
+            <h5 id="fault">- Fault Family</h5>
+				<table style="width:100%">
+				  <thead>
+				    <tr>
+				      <th style="text-align: center">Name</th>
+				      <th style="text-align: center">Size</th>
+				      <th style="text-align: center">#Training</th>
+				      <th style="text-align: center">#Validation</th>
+				      <th style="text-align: center">Input shape</th>
+				      <th style="text-align: center">Output shape</th>
+				      <th>Note</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td style="text-align: center"> <a target="_blank" href="https://drive.google.com/drive/folders/1I0opNrZ-XScfYFk37P9BOr59RMKmuBJh?usp=sharing">\(\mathbb{E}^{FFA}\)</a></td>
+				      <td style="text-align: center"> 222GB</td>
+				      <td style="text-align: center">48K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Flat layers with one fault</td>
+				    </tr>
+				    <tr>
+				      <td style="text-align: center"> <a target="_blank" href="https://drive.google.com/drive/folders/1qX1e2bkTpaTexOyCFqaZNVCg2ghyBEJe?usp=sharing">\(\mathbb{E}^{FFB}\)</a></td>
+				      <td style="text-align: center"> 222GB</td>
+				      <td style="text-align: center">48K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Difficult version of \(\mathbb{E}^{FFA}\)</td>
+				    </tr>
+
+				  </tbody>
+				  <tbody>
+				    <tr>
+				      <td style="text-align: center"><a target="_blank" href="https://drive.google.com/drive/folders/1epsIb6QLHcd5UOLTaTEGh3trECFNim9O?usp=sharing">\(\mathbb{E}^{CFA}\)</a></td>
+				      <td style="text-align: center"> 222GB</td>
+				      <td style="text-align: center">48K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Curve layers with one fault</td>
+				    </tr>
+				    <tr>
+				      <td style="text-align: center"><a target="_blank" href="https://drive.google.com/drive/folders/1GOX2sLHVNgaFZ8QtBuLUYioz33kzbjl2?usp=sharing">\(\mathbb{E}^{CFB}\)</a></td>
+				      <td style="text-align: center"> 222GB</td>
+				      <td style="text-align: center">48K</td>
+				      <td style="text-align: center">6K</td>
+				      <td style="text-align: center">(5,1000,70)</td>
+				      <td style="text-align: center">(1,70,70)</td>
+				      <td>Difficult version of \(\mathbb{E}^{CFA}\)</td>
+				    </tr>
+
+				  </tbody>
+				</table>
+
+				<hr />
+
+            
+			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="container">
+      <p class="text-center">
+          \(\mathbb{E}^{FWI}\) 2023 
+      </p>
+  </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../assets/js/bootstrap.min.js "></script>
+<script src="../assets/js/typeahead.bundle.min.js "></script>
+
+<script src="../assets/js/main.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Chengyuan Deng">
+
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <title> Elastic FWI | A collection of benchmark datasets for Seismic FWI with Machine Learning</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span style="font-family: 'Ma Shan Zheng', cursive;">\(\mathbb{E}^{FWI}\)</span> 
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                <li ><a href="../index.html">Home</a></li>
+                <li ><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Datasets <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="docs/data.html#vel">\(\mathbb{E}^{Vel}\) Family</a></li>
+                      <li class="divider"></li>  
+                      <li><a href="docs/data.html#fault">\(\mathbb{E}^{Fault}\) Family</a></li> 
+                    </ul>
+                </li>           
+                <li ><a href="#">Benchmarks</a></li>           
+                <li ><a  target="_blank" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  Resources <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a target="_blank" href="https://github.com/lanl/OpenFWI">Github</a></li>
+                    <li><a target="_blank" href="https://drive.google.com/drive/folders/1IzRHldsiiHIqTT9CwTXHBtONuIJiNbyJ?usp=sharing">Pretrained Models</a></li>
+                  </ul>
+                <li ><a href="update.html">Updates</a></li>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>\(\mathbb{E}^{FWI}\) Benchmarks</h3>
+            <hr />
+            <h5>- Benchmark by ElasticNet (SSIM)</h5>
+            <table style="width:80%">
+              <thead>
+                <tr>
+                  <th style="text-align: center">Dataset</th>
+                  <th style="text-align: center">Loss Function</th>
+                  <th style="text-align: center">\(V_P\)</th>
+                  <th style="text-align: center">\(V_S\) </th>
+                  <th style="text-align: center">Poisson ratio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FVA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\( 0.8993 \backslash \ 0.9051 \)</td>
+                  <td style="text-align: center">\( 0.8757 \backslash \ 0.9030 \)</td>
+                  <td style="text-align: center">\( 0.7493 \backslash \ 0.7402 \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CVA}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.7577 \backslash 0.7849 \)</td>
+                  <td style="text-align: center">\(0.7635 \backslash 0.7878 \)</td>
+                  <td style="text-align: center">\(0.6484 \backslash 0.6378 \)</td>
+
+                </tr>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FVB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.8149 \backslash 0.8197 \)</td>
+                  <td style="text-align: center">\(0.8203 \backslash 0.8266 \)</td>
+                  <td style="text-align: center">\(0.6741 \backslash 0.6321 \)</td>
+
+                </tr>
+
+
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CVB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.6091 \backslash 0.6173 \)</td>
+                  <td style="text-align: center">\(0.6434 \backslash 0.6506 \)</td>
+                  <td style="text-align: center">\(0.5111 \backslash 0.4957 \)</td>
+
+                </tr>
+
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FFA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\( 0.8933 \backslash \ 0.8928 \)</td>
+                  <td style="text-align: center">\( 0.8609 \backslash \ 0.8591 \)</td>
+                  <td style="text-align: center">\( 0.7296 \backslash \ 0.7307 \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CFA}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.7263 \backslash 0.7234 \)</td>
+                  <td style="text-align: center">\(0.7358 \backslash 0.7382 \)</td>
+                  <td style="text-align: center">\(0.6842 \backslash 0.6686 \)</td>
+
+                </tr>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FFB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.6858 \backslash 0.6815 \)</td>
+                  <td style="text-align: center">\(0.7225 \backslash 0.7216 \)</td>
+                  <td style="text-align: center">\(0.5987 \backslash 0.5801 \)</td>
+
+                </tr>
+
+                
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CFB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.5613 \backslash 0.5744 \)</td>
+                  <td style="text-align: center">\(0.6103 \backslash 0.6242 \)</td>
+                  <td style="text-align: center">\(0.5077 \backslash 0.4945 \)</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+          <hr />
+
+          <h5>- Benchmark by ElasticGAN (SSIM)</h5>
+            <table style="width:80%">
+              <thead>
+                <tr>
+                  <th style="text-align: center">Dataset</th>
+                  <th style="text-align: center">Loss Function</th>
+                  <th style="text-align: center">\(V_P\)</th>
+                  <th style="text-align: center">\(V_S\) </th>
+                  <th style="text-align: center">Poisson ratio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FVA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\( 0.0118 \backslash \ 0.0605 \)</td>
+                  <td style="text-align: center">\( 0.0178 \backslash \ 0.0783 \)</td>
+                  <td style="text-align: center">\( 0.9916 \backslash \ 0.9453 \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{CVA}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0482 \backslash 0.0510 \)</td>
+                  <td style="text-align: center">\(0.1034 \backslash 0.0976 \)</td>
+                  <td style="text-align: center">\(0.8624 \backslash 0.8758 \)</td>
+
+                </tr>
+
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{FVB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0329 \backslash 0.0328 \)</td>
+                  <td style="text-align: center">\(0.0807 \backslash 0.0787 \)</td>
+                  <td style="text-align: center">\(0.9521 \backslash 0.9556 \)</td>
+
+                </tr>
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CVB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.1268 \backslash 0.1428 \)</td>
+                  <td style="text-align: center">\(0.2618 \backslash 0.2611 \)</td>
+                  <td style="text-align: center">\(0.7111 \backslash 0.6962 \)</td>
+
+                </tr>
+
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FFA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\( 0.0868 \backslash \ 0.0319 \)</td>
+                  <td style="text-align: center">\( 0.1485 \backslash \ 0.0531 \)</td>
+                  <td style="text-align: center">\( 0.9313 \backslash \ 0.9798 \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CFA}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0258 \backslash 0.0216 \)</td>
+                  <td style="text-align: center">\(0.0606 \backslash 0.0505 \)</td>
+                  <td style="text-align: center">\(0.9613 \backslash 0.9687 \)</td>
+
+                </tr>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FFB}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0925 \backslash 0.0946 \)</td>
+                  <td style="text-align: center">\(0.1600 \backslash 0.1553 \)</td>
+                  <td style="text-align: center">\(0.7476 \backslash 0.7552 \)</td>
+
+                </tr>
+
+
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CFB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.1571 \backslash 0.1583 \)</td>
+                  <td style="text-align: center">\(0.2427 \backslash 0.2336 \)</td>
+                  <td style="text-align: center">\(0.5996 \backslash 0.6033 \)</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+            <hr />
+          
+          <h5>- Benchmark by ElasticTransformer (SSIM)</h5>
+            <table style="width:80%">
+              <thead>
+                <tr>
+                  <th style="text-align: center">Dataset</th>
+                  <th style="text-align: center">Loss Function</th>
+                  <th style="text-align: center">\(V_P\)</th>
+                  <th style="text-align: center">\(V_S\) </th>
+                  <th style="text-align: center">Poisson ratio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FVA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0320  \)</td>
+                  <td style="text-align: center">\(0.0632  \)</td>
+                  <td style="text-align: center">\(0.9563  \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{CVA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0353  \)</td>
+                  <td style="text-align: center">\(0.0771  \)</td>
+                  <td style="text-align: center">\(0.8866  \)</td>
+
+                </tr>
+
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{FVB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2\)</td>
+                  <td style="text-align: center">\(0.0409  \)</td>
+                  <td style="text-align: center">\(0.0715  \)</td>
+                  <td style="text-align: center">\(0.8435  \)</td>
+
+                </tr>
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CVB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0886  \)</td>
+                  <td style="text-align: center">\(0.1587  \)</td>
+                  <td style="text-align: center">\(0.6617  \)</td>
+
+                </tr>
+
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FFA}\) </td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0324  \)</td>
+                  <td style="text-align: center">\(0.0752  \)</td>
+                  <td style="text-align: center">\(0.9487  \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{CFA}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0709  \)</td>
+                  <td style="text-align: center">\(0.1102  \)</td>
+                  <td style="text-align: center">\(0.6772  \)</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"> \(\mathbb{E}^{FFB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.0273  \)</td>
+                  <td style="text-align: center">\(0.0495  \)</td>
+                  <td style="text-align: center">\(0.9363  \)</td>
+
+                </tr>
+
+
+                <tr>
+                  <td style="text-align: center">\(\mathbb{E}^{FFB}\)</td>
+                  <td style="text-align: center"> \(\ell_1 \backslash \ell_2 \)</td>
+                  <td style="text-align: center">\(0.1699  \)</td>
+                  <td style="text-align: center">\(0.2462  \)</td>
+                  <td style="text-align: center">\(0.3880  \)</td>
+
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+<footer class="footer">
+  <div class="container">
+      <p class="text-center">
+          \(\mathbb{E}^{FWI}\) 2023
+      </p>
+  </div>
+</footer>
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../assets/js/bootstrap.min.js "></script>
+<script src="../assets/js/typeahead.bundle.min.js "></script>
+
+<script src="../assets/js/main.js "></script>
+
+</body>
+
+</html>
