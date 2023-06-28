@@ -22,7 +22,15 @@ canvas {
     background: rgba(255,255,255,0.95);
 }
 .container {
-    max-width: 768px;
+    max-width:1024px;
+}
+
+.emoji {
+    display: inline-block;
+    vertical-align: text-top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center
 }
 
 .stat {
@@ -240,9 +248,21 @@ p, .caption {
 }
 
 hr.divider {
-    max-width: 768px;
+    max-width: 10248px;
     margin-top: 32px;
     margin-bottom: 32px;
+    border: none;
+    height: 1px;
+    background-color: #333;
+}
+
+.copybutton {
+   left: 100%;
+   padding: 0;
+border: none;
+margin-left: 8px;
+/*background: none;*/
+
 }
 
 .row:not(:last-child):not(.authors) {
